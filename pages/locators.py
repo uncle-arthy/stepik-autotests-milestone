@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET_LINK = (By.CSS_SELECTOR, "div.basket-mini a.btn")
 
 
 class MainPageLocators:
@@ -16,12 +17,17 @@ class LoginPageLocators:
 
 
 class ProductPageLocators:
-    ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, "button.btn-add-to-basket")
-    ADD_TO_CART_SUCCESS_BOX = (By.CSS_SELECTOR, "div.alertinner")
-    TOTAL_PRICE_IN_CART_BOX = (By.CSS_SELECTOR, ".alert-info div.alertinner")
+    ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, "button.btn-add-to-basket")
+    ADD_TO_BASKET_SUCCESS_BOX = (By.CSS_SELECTOR, "div.alertinner")
+    TOTAL_PRICE_IN_BASKET_BOX = (By.CSS_SELECTOR, ".alert-info div.alertinner")
 
     PRODUCT_NAME_IN_SUCCESS_BOX = (By.CSS_SELECTOR, "div.alertinner strong")
     PRODUCT_NAME_IN_DESCRIPTION = (By.CSS_SELECTOR, ".product_main h1")
 
     TOTAL_PRICE_IN_BOX = (By.CSS_SELECTOR, "div.alertinner p strong")
     PRODUCT_PRICE_IN_DESCRIPTION = (By.CSS_SELECTOR, ".product_main .price_color")
+
+
+class BasketPageLocators:
+    BASKET_ITEMS = (By.CSS_SELECTOR, "div.basket-items")
+    EMPTY_BASKET_TEXT_PARAGRAPH = (By.CSS_SELECTOR, "#content_inner p")
