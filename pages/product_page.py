@@ -29,11 +29,11 @@ class ProductPage(BasePage):
             "No 'Total price in a basket' messagebox"
 
     def should_be_same_total_basket_price_and_product_price(self):
-        price_in_messageboox = self.browser.find_element(*ProductPageLocators.TOTAL_PRICE_IN_BOX).text
+        price_in_messagebox = self.browser.find_element(*ProductPageLocators.TOTAL_PRICE_IN_BOX).text
         price_in_description = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE_IN_DESCRIPTION).text
 
-        assert price_in_description == price_in_messageboox, "Prices in messagebox and " \
-                                                             "in description doesn't match"
+        assert price_in_description == price_in_messagebox, "Prices in messagebox and " \
+                                                            "in description doesn't match"
 
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.ADD_TO_BASKET_SUCCESS_BOX), \
@@ -42,4 +42,3 @@ class ProductPage(BasePage):
     def should_be_dissapearing_success_message(self):
         assert self.is_disappeared(*ProductPageLocators.ADD_TO_BASKET_SUCCESS_BOX), \
             "Success message is still presented, but should dissapear"
-
