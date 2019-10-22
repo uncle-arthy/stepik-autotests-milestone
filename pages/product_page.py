@@ -34,3 +34,12 @@ class ProductPage(BasePage):
 
         assert price_in_description == price_in_messageboox, "Prices in messagebox and " \
                                                              "in description doesn't match"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.ADD_TO_CART_SUCCESS_BOX), \
+            "Success message is presented, but should not be"
+
+    def should_be_dissapearing_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.ADD_TO_CART_SUCCESS_BOX), \
+            "Success message is still presented, but should dissapear"
+
